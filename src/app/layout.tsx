@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   title: "Taman Pintar Yogyakarta",
   description:
     "Wahana wisata pendidikan sains terbaik di Yogyakarta. Temukan pengalaman belajar yang menyenangkan untuk seluruh keluarga.",
+  icons: {
+    icon: "/images/logo-tp.png",
+    apple: "/images/logo-tp.png",
+  },
 };
 
 export default function RootLayout({
