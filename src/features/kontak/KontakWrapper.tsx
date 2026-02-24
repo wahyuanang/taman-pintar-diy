@@ -2,18 +2,56 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, PrinterIcon, MessageCircle, Mail, Globe, Clock, Facebook, Twitter, Youtube, Instagram, Send } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  PrinterIcon,
+  MessageCircle,
+  Mail,
+  Globe,
+  Clock,
+  Facebook,
+  Twitter,
+  Youtube,
+  Instagram,
+  Send,
+} from "lucide-react";
 import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 const contactDetails = [
-  { Icon: MapPin, title: "Alamat", value: "Jalan Panembahan Senopati 1\u20133, Yogyakarta 55122", link: null },
-  { Icon: Phone, title: "Telepon", value: "(0274) 583631", link: "tel:+62274583631" },
+  {
+    Icon: MapPin,
+    title: "Alamat",
+    value: "Jalan Panembahan Senopati 1\u20133, Yogyakarta 55122",
+    link: null,
+  },
+  {
+    Icon: Phone,
+    title: "Telepon",
+    value: "(0274) 583631",
+    link: "tel:+62274583631",
+  },
   { Icon: PrinterIcon, title: "Faksimili", value: "(0274) 583664", link: null },
-  { Icon: MessageCircle, title: "WhatsApp", value: "0857 2973 9999", link: "https://wa.me/6285729739999" },
-  { Icon: Mail, title: "Email", value: "info@tamanpintar.com", link: "mailto:info@tamanpintar.com" },
-  { Icon: Globe, title: "Website", value: "www.tamanpintar.co.id", link: "https://www.tamanpintar.co.id" },
+  {
+    Icon: MessageCircle,
+    title: "WhatsApp",
+    value: "0857 2973 9999",
+    link: "https://wa.me/6285729739999",
+  },
+  {
+    Icon: Mail,
+    title: "Email",
+    value: "info@tamanpintar.com",
+    link: "mailto:info@tamanpintar.com",
+  },
+  {
+    Icon: Globe,
+    title: "Website",
+    value: "www.tamanpintar.co.id",
+    link: "https://www.tamanpintar.co.id",
+  },
 ];
 
 const operasional = [
@@ -31,7 +69,9 @@ export function KontakWrapper() {
     pesan: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -47,7 +87,12 @@ export function KontakWrapper() {
       <main className="pt-16 min-h-screen bg-[#f9fafb]">
         {/* Header */}
         <div className="relative overflow-hidden bg-[#1a2e35] py-14">
-          <Image src="/images/assets/bg-depan.jpg" alt="" fill className="object-cover opacity-15" />
+          <Image
+            src="/images/assets/bg-depan.jpeg"
+            alt=""
+            fill
+            className="object-cover opacity-15"
+          />
           <div className="absolute inset-0 bg-linear-to-r from-[#1a2e35]/95 via-[#1a2e35]/80 to-[#2FA4A9]/60" />
           <div className="relative container mx-auto px-4 md:px-8 text-center z-10">
             <nav className="text-sm text-gray-300 mb-3">
@@ -55,9 +100,12 @@ export function KontakWrapper() {
               <span className="mx-2">/</span>
               <span className="text-white font-medium">Kontak</span>
             </nav>
-            <h1 className="text-3xl md:text-4xl font-bold text-white">Kontak Kami</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-white">
+              Kontak Kami
+            </h1>
             <p className="text-gray-200 mt-2 text-sm">
-              Kami siap membantu Anda! Hubungi kami melalui form atau informasi kontak di bawah.
+              Kami siap membantu Anda! Hubungi kami melalui form atau informasi
+              kontak di bawah.
             </p>
           </div>
         </div>
@@ -78,18 +126,28 @@ export function KontakWrapper() {
                         <d.Icon className="w-4 h-4 text-[#2FA4A9]" />
                       </div>
                       <div>
-                        <p className="text-xs text-gray-400 mb-0.5">{d.title}</p>
+                        <p className="text-xs text-gray-400 mb-0.5">
+                          {d.title}
+                        </p>
                         {d.link ? (
                           <a
                             href={d.link}
-                            target={d.link.startsWith("http") ? "_blank" : undefined}
-                            rel={d.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                            target={
+                              d.link.startsWith("http") ? "_blank" : undefined
+                            }
+                            rel={
+                              d.link.startsWith("http")
+                                ? "noopener noreferrer"
+                                : undefined
+                            }
                             className="text-sm font-medium text-[#2FA4A9] hover:underline"
                           >
                             {d.value}
                           </a>
                         ) : (
-                          <p className="text-sm font-medium text-gray-700">{d.value}</p>
+                          <p className="text-sm font-medium text-gray-700">
+                            {d.value}
+                          </p>
                         )}
                       </div>
                     </div>
@@ -109,14 +167,18 @@ export function KontakWrapper() {
                       className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0"
                     >
                       <span className="text-sm text-gray-600">{o.day}</span>
-                      <span className="text-sm font-semibold text-[#2FA4A9]">{o.time}</span>
+                      <span className="text-sm font-semibold text-[#2FA4A9]">
+                        {o.time}
+                      </span>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="bg-linear-to-br from-[#2FA4A9] to-[#1a2e35] rounded-md p-6 text-white">
-                <h2 className="font-bold mb-4 flex items-center gap-2"><Globe className="w-4 h-4" /> Ikuti Kami</h2>
+                <h2 className="font-bold mb-4 flex items-center gap-2">
+                  <Globe className="w-4 h-4" /> Ikuti Kami
+                </h2>
                 <div className="grid grid-cols-2 gap-2">
                   {[
                     { label: "Facebook", Icon: Facebook },
@@ -142,7 +204,9 @@ export function KontakWrapper() {
               <div className="bg-white rounded-md border border-gray-100 shadow-sm p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-1 h-6 bg-[#2FA4A9] rounded-full" />
-                  <h2 className="text-xl font-bold text-gray-800">Kirim Pesan</h2>
+                  <h2 className="text-xl font-bold text-gray-800">
+                    Kirim Pesan
+                  </h2>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -189,7 +253,9 @@ export function KontakWrapper() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                        Email
+                      </label>
                       <input
                         type="email"
                         name="email"
@@ -230,7 +296,8 @@ export function KontakWrapper() {
                     Lokasi Taman Pintar Yogyakarta
                   </h3>
                   <p className="text-sm text-gray-500 mt-1">
-                    Jl. Panembahan Senopati No.1–3, Ngupasan, Kec. Gondomanan, Kota Yogyakarta 55122
+                    Jl. Panembahan Senopati No.1–3, Ngupasan, Kec. Gondomanan,
+                    Kota Yogyakarta 55122
                   </p>
                 </div>
                 <div className="h-72 bg-gray-100">

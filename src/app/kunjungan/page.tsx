@@ -1,4 +1,4 @@
-import { KunjunganWrapper } from '@/features/kunjungan';
+import { KunjunganWrapper } from "@/features/kunjungan";
 
 export default function Page() {
   return <KunjunganWrapper />;

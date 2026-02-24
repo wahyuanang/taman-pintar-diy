@@ -3,10 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #1a1a2e;
-  --primary: #2FA4A9;
+  --primary: #2fa4a9;
   --primary-dark: #247d82;
   --primary-light: #e8f7f7;
-  --accent: #F5A721;
+  --accent: #f5a721;
   --accent-dark: #d4911a;
 }
 
@@ -28,7 +28,7 @@ body {
   background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2FA4A9;
+  background: #2fa4a9;
   border-radius: 4px;
 }
 
@@ -48,3 +48,35 @@ body {
   animation: fadeInUp 0.6s ease forwards;
 }
 
+/* ── Hero Swiper ──────────────────────────────────────────────────────────── */
+.hero-swiper {
+  width: 100%;
+}
+
+.hero-slide {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Pagination bullets – positioned above the wave */
+.hero-swiper .swiper-pagination {
+  bottom: 72px !important;
+  z-index: 30;
+}
+
+.hero-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.55);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  background: #f5a721;
+  width: 28px;
+  border-radius: 4px;
+}
+/* ──────────────────────────────────────────────────────────────────────────── */

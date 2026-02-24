@@ -1,1 +1,1 @@
-export { KontakWrapper } from './KontakWrapper';
+export { KontakWrapper } from "./KontakWrapper";

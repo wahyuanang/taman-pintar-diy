@@ -1,4 +1,4 @@
-import { HargaTiketWrapper } from '@/features/harga-tiket';
+import { HargaTiketWrapper } from "@/features/harga-tiket";
 
 export default function Page() {
   return <HargaTiketWrapper />;

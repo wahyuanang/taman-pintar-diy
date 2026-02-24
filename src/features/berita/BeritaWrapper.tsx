@@ -9,13 +9,22 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { beritaList } from "@/data/content";
 
-const categories = ["Semua", "Event", "Kompetisi", "Kegiatan", "Berita", "Promo"];
+const categories = [
+  "Semua",
+  "Event",
+  "Kompetisi",
+  "Kegiatan",
+  "Berita",
+  "Promo",
+];
 
 export function BeritaWrapper() {
   const [active, setActive] = useState("Semua");
 
   const filtered =
-    active === "Semua" ? beritaList : beritaList.filter((b) => b.category === active);
+    active === "Semua"
+      ? beritaList
+      : beritaList.filter((b) => b.category === active);
 
   const featured = filtered[0];
   const rest = filtered.slice(1);
@@ -26,7 +35,12 @@ export function BeritaWrapper() {
       <main className="pt-16 min-h-screen bg-[#f9fafb]">
         {/* Header */}
         <div className="relative overflow-hidden bg-[#1a2e35] py-14">
-          <Image src="/images/assets/bg-depan.jpg" alt="" fill className="object-cover opacity-15" />
+          <Image
+            src="/images/assets/bg-depan.jpeg"
+            alt=""
+            fill
+            className="object-cover opacity-15"
+          />
           <div className="absolute inset-0 bg-linear-to-r from-[#1a2e35]/95 via-[#1a2e35]/80 to-[#2FA4A9]/60" />
           <div className="relative container mx-auto px-4 md:px-8 text-center z-10">
             <nav className="text-sm text-gray-300 mb-3">
@@ -34,9 +48,12 @@ export function BeritaWrapper() {
               <span className="mx-2">/</span>
               <span className="text-white font-medium">Berita</span>
             </nav>
-            <h1 className="text-3xl md:text-4xl font-bold text-white">Berita & Artikel</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-white">
+              Berita & Artikel
+            </h1>
             <p className="text-gray-200 mt-2 text-sm">
-              Informasi terkini seputar kegiatan dan program Taman Pintar Yogyakarta
+              Informasi terkini seputar kegiatan dan program Taman Pintar
+              Yogyakarta
             </p>
           </div>
         </div>
@@ -94,12 +111,15 @@ export function BeritaWrapper() {
                         {featured.excerpt}
                       </p>
                       <div className="flex items-center justify-between">
-                        <span className="text-xs text-gray-400">{featured.date}</span>
+                        <span className="text-xs text-gray-400">
+                          {featured.date}
+                        </span>
                         <Link
                           href={`/berita/${featured.id}`}
                           className="text-sm font-medium text-[#2FA4A9] hover:underline flex items-center gap-1"
                         >
-                          Baca Selengkapnya <ArrowRight className="w-3.5 h-3.5" />
+                          Baca Selengkapnya{" "}
+                          <ArrowRight className="w-3.5 h-3.5" />
                         </Link>
                       </div>
                     </div>
@@ -139,10 +159,17 @@ export function BeritaWrapper() {
                       <h3 className="font-bold text-gray-800 mb-2 line-clamp-2 group-hover:text-[#2FA4A9] transition-colors">
                         {b.title}
                       </h3>
-                      <p className="text-sm text-gray-500 line-clamp-3 mb-4">{b.excerpt}</p>
+                      <p className="text-sm text-gray-500 line-clamp-3 mb-4">
+                        {b.excerpt}
+                      </p>
                       <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                        <span className="flex items-center gap-1 text-xs text-gray-400"><User className="w-3 h-3" /> {b.author}</span>
-                        <Link href={`/berita/${b.id}`} className="flex items-center gap-1 text-xs font-medium text-[#2FA4A9] hover:underline">
+                        <span className="flex items-center gap-1 text-xs text-gray-400">
+                          <User className="w-3 h-3" /> {b.author}
+                        </span>
+                        <Link
+                          href={`/berita/${b.id}`}
+                          className="flex items-center gap-1 text-xs font-medium text-[#2FA4A9] hover:underline"
+                        >
                           Baca <ArrowRight className="w-3 h-3" />
                         </Link>
                       </div>

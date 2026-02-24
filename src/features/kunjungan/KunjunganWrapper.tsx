@@ -4,7 +4,16 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Users, FileText, CalendarDays, GraduationCap, Phone, Send, ClipboardList, Ticket } from "lucide-react";
+import {
+  Users,
+  FileText,
+  CalendarDays,
+  GraduationCap,
+  Phone,
+  Send,
+  ClipboardList,
+  Ticket,
+} from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -24,7 +33,14 @@ const wahanaOptions = [
   "Lukis Gerabah",
 ];
 
-const waktuOptions = ["08:45 WIB", "09:00 WIB", "10:00 WIB", "11:00 WIB", "13:00 WIB", "14:00 WIB"];
+const waktuOptions = [
+  "08:45 WIB",
+  "09:00 WIB",
+  "10:00 WIB",
+  "11:00 WIB",
+  "13:00 WIB",
+  "14:00 WIB",
+];
 
 const procedures = [
   "Minimal jumlah rombongan sekolah adalah 20 orang, yang terdiri dari siswa & guru.",
@@ -34,10 +50,30 @@ const procedures = [
 ];
 
 const infoCards = [
-  { Icon: Users, title: "Minimal Rombongan", value: "20 Orang", color: "bg-[#e8f7f7] text-[#2FA4A9]" },
-  { Icon: FileText, title: "Surat Keterangan", value: "Wajib Disertakan", color: "bg-[#FFF8EC] text-[#F5A721]" },
-  { Icon: CalendarDays, title: "Berlaku Semua Hari", value: "Termasuk Hari Libur", color: "bg-purple-50 text-purple-600" },
-  { Icon: GraduationCap, title: "Diskon Tiket Guru", value: "10% dari Total Tiket Siswa", color: "bg-green-50 text-green-600" },
+  {
+    Icon: Users,
+    title: "Minimal Rombongan",
+    value: "20 Orang",
+    color: "bg-[#e8f7f7] text-[#2FA4A9]",
+  },
+  {
+    Icon: FileText,
+    title: "Surat Keterangan",
+    value: "Wajib Disertakan",
+    color: "bg-[#FFF8EC] text-[#F5A721]",
+  },
+  {
+    Icon: CalendarDays,
+    title: "Berlaku Semua Hari",
+    value: "Termasuk Hari Libur",
+    color: "bg-purple-50 text-purple-600",
+  },
+  {
+    Icon: GraduationCap,
+    title: "Diskon Tiket Guru",
+    value: "10% dari Total Tiket Siswa",
+    color: "bg-green-50 text-green-600",
+  },
 ];
 
 export function KunjunganWrapper() {
@@ -52,13 +88,17 @@ export function KunjunganWrapper() {
     waktu: "08:45 WIB",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Pendaftaran kunjungan berhasil dikirim! Kami akan segera menghubungi Anda.");
+    alert(
+      "Pendaftaran kunjungan berhasil dikirim! Kami akan segera menghubungi Anda.",
+    );
   };
 
   return (
@@ -67,7 +107,12 @@ export function KunjunganWrapper() {
       <main className="pt-16 min-h-screen bg-[#f9fafb]">
         {/* Header */}
         <div className="relative overflow-hidden bg-[#1a2e35] py-14">
-          <Image src="/images/assets/bg-depan.jpg" alt="" fill className="object-cover opacity-15" />
+          <Image
+            src="/images/assets/bg-depan.jpeg"
+            alt=""
+            fill
+            className="object-cover opacity-15"
+          />
           <div className="absolute inset-0 bg-linear-to-r from-[#1a2e35]/95 via-[#1a2e35]/80 to-[#2FA4A9]/60" />
           <div className="relative container mx-auto px-4 md:px-8 text-center z-10">
             <nav className="text-sm text-gray-300 mb-3">
@@ -75,8 +120,12 @@ export function KunjunganWrapper() {
               <span className="mx-2">/</span>
               <span className="text-white font-medium">Kunjungan</span>
             </nav>
-            <h1 className="text-3xl md:text-4xl font-bold text-white">Kunjungan</h1>
-            <p className="text-[#F5A721] font-medium mt-1">Taman Pintar Yogyakarta</p>
+            <h1 className="text-3xl md:text-4xl font-bold text-white">
+              Kunjungan
+            </h1>
+            <p className="text-[#F5A721] font-medium mt-1">
+              Taman Pintar Yogyakarta
+            </p>
           </div>
         </div>
 
@@ -92,7 +141,9 @@ export function KunjunganWrapper() {
                 transition={{ duration: 0.4, delay: index * 0.08 }}
                 className="bg-white rounded-md p-4 border border-gray-100 shadow-sm text-center"
               >
-                <div className={`inline-flex w-12 h-12 rounded-md items-center justify-center mb-3 ${card.color}`}>
+                <div
+                  className={`inline-flex w-12 h-12 rounded-md items-center justify-center mb-3 ${card.color}`}
+                >
                   <card.Icon className="w-5 h-5" />
                 </div>
                 <p className="text-xs text-gray-400 mb-1">{card.title}</p>
@@ -107,16 +158,22 @@ export function KunjunganWrapper() {
               <div className="bg-white rounded-md border border-gray-100 shadow-sm p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-1 h-6 bg-[#2FA4A9] rounded-full" />
-                  <h2 className="text-xl font-bold text-gray-800">Form Pendaftaran Kunjungan</h2>
+                  <h2 className="text-xl font-bold text-gray-800">
+                    Form Pendaftaran Kunjungan
+                  </h2>
                 </div>
                 <p className="text-sm text-gray-500 mb-6">
-                  Khusus untuk <span className="font-semibold text-[#2FA4A9]">Rombongan Sekolah</span>
+                  Khusus untuk{" "}
+                  <span className="font-semibold text-[#2FA4A9]">
+                    Rombongan Sekolah
+                  </span>
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                      Nama Instansi / Sekolah <span className="text-red-500">*</span>
+                      Nama Instansi / Sekolah{" "}
+                      <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -155,7 +212,9 @@ export function KunjunganWrapper() {
                         className="w-full border border-gray-200 rounded-md px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#2FA4A9] focus:border-transparent transition bg-white"
                       >
                         {wahanaOptions.map((w) => (
-                          <option key={w} value={w}>{w}</option>
+                          <option key={w} value={w}>
+                            {w}
+                          </option>
                         ))}
                       </select>
                     </div>
@@ -177,7 +236,9 @@ export function KunjunganWrapper() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                        Email
+                      </label>
                       <input
                         type="email"
                         name="email"
@@ -206,7 +267,8 @@ export function KunjunganWrapper() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                        Tanggal Kunjungan <span className="text-red-500">*</span>
+                        Tanggal Kunjungan{" "}
+                        <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="date"
@@ -218,7 +280,9 @@ export function KunjunganWrapper() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1.5">Waktu</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                        Waktu
+                      </label>
                       <select
                         name="waktu"
                         value={form.waktu}
@@ -240,7 +304,8 @@ export function KunjunganWrapper() {
                       Daftar Kunjungan
                     </button>
                     <p className="text-xs text-gray-400 text-center mt-3">
-                      Dengan mendaftar, Anda menyetujui syarat dan ketentuan kunjungan Taman Pintar.
+                      Dengan mendaftar, Anda menyetujui syarat dan ketentuan
+                      kunjungan Taman Pintar.
                     </p>
                   </div>
                 </form>
@@ -267,10 +332,12 @@ export function KunjunganWrapper() {
               </div>
 
               <div className="bg-linear-to-br from-[#2FA4A9] to-[#1a2e35] rounded-md p-6 text-white">
-                <h3 className="font-bold mb-2 flex items-center gap-2"><Ticket className="w-4 h-4" /> Informasi Harga Tiket</h3>
+                <h3 className="font-bold mb-2 flex items-center gap-2">
+                  <Ticket className="w-4 h-4" /> Informasi Harga Tiket
+                </h3>
                 <p className="text-sm text-gray-200 mb-4 leading-relaxed">
-                  Cek harga tiket masuk untuk setiap wahana dan temukan paket terbaik untuk
-                  kunjungan rombongan Anda.
+                  Cek harga tiket masuk untuk setiap wahana dan temukan paket
+                  terbaik untuk kunjungan rombongan Anda.
                 </p>
                 <Link
                   href="/harga-tiket"
@@ -281,11 +348,19 @@ export function KunjunganWrapper() {
               </div>
 
               <div className="bg-white rounded-md border border-gray-100 shadow-sm p-6">
-                <h3 className="font-bold text-gray-800 mb-4 flex items-center gap-2"><Phone className="w-4 h-4 text-[#2FA4A9]" /> Hubungi Kami</h3>
+                <h3 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-[#2FA4A9]" /> Hubungi Kami
+                </h3>
                 <div className="space-y-2 text-sm text-gray-600">
-                  <p>Hotline WA: <strong>0857 3979 9999</strong></p>
-                  <p>Telepon: <strong>(0274) 583631</strong></p>
-                  <p>Email: <strong>info@tamanpintar.com</strong></p>
+                  <p>
+                    Hotline WA: <strong>0857 3979 9999</strong>
+                  </p>
+                  <p>
+                    Telepon: <strong>(0274) 583631</strong>
+                  </p>
+                  <p>
+                    Email: <strong>info@tamanpintar.com</strong>
+                  </p>
                 </div>
               </div>
             </div>

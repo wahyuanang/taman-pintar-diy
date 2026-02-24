@@ -1,1 +1,1 @@
-export { HargaTiketWrapper } from './HargaTiketWrapper';
+export { HargaTiketWrapper } from "./HargaTiketWrapper";

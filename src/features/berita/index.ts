@@ -1,2 +1,2 @@
-export { BeritaWrapper } from './BeritaWrapper';
-export { BeritaDetailWrapper } from './BeritaDetailWrapper';
+export { BeritaWrapper } from "./BeritaWrapper";
+export { BeritaDetailWrapper } from "./BeritaDetailWrapper";

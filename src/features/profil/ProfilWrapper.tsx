@@ -10,7 +10,12 @@ export function ProfilWrapper() {
       <main className="pt-16 min-h-screen bg-[#f9fafb]">
         {/* Page Header */}
         <div className="relative overflow-hidden bg-[#1a2e35] py-14">
-          <Image src="/images/assets/bg-depan.jpg" alt="" fill className="object-cover opacity-15" />
+          <Image
+            src="/images/assets/bg-depan.jpeg"
+            alt=""
+            fill
+            className="object-cover opacity-15"
+          />
           <div className="absolute inset-0 bg-linear-to-r from-[#1a2e35]/95 via-[#1a2e35]/80 to-[#2FA4A9]/60" />
           <div className="relative container mx-auto px-4 md:px-8 z-10">
             <div className="text-center">
@@ -19,7 +24,9 @@ export function ProfilWrapper() {
                 <span className="mx-2">/</span>
                 <span className="text-white font-medium">Profil</span>
               </nav>
-              <h1 className="text-3xl md:text-4xl font-bold text-white">Profil Kami</h1>
+              <h1 className="text-3xl md:text-4xl font-bold text-white">
+                Profil Kami
+              </h1>
               <p className="text-gray-200 mt-2 text-sm">
                 Mengenal lebih dekat Taman Pintar Yogyakarta
               </p>

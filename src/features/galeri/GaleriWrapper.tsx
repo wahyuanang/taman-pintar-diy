@@ -16,7 +16,9 @@ export function GaleriWrapper() {
   const [lightbox, setLightbox] = useState<GaleriItem | null>(null);
 
   const filtered =
-    active === "Semua" ? galeriItems : galeriItems.filter((g) => g.category === active);
+    active === "Semua"
+      ? galeriItems
+      : galeriItems.filter((g) => g.category === active);
 
   return (
     <>
@@ -24,7 +26,12 @@ export function GaleriWrapper() {
       <main className="pt-16 min-h-screen bg-[#f9fafb]">
         {/* Header */}
         <div className="relative overflow-hidden bg-[#1a2e35] py-14">
-          <Image src="/images/assets/bg-depan.jpg" alt="" fill className="object-cover opacity-15" />
+          <Image
+            src="/images/assets/bg-depan.jpeg"
+            alt=""
+            fill
+            className="object-cover opacity-15"
+          />
           <div className="absolute inset-0 bg-linear-to-r from-[#1a2e35]/95 via-[#1a2e35]/80 to-[#2FA4A9]/60" />
           <div className="relative container mx-auto px-4 md:px-8 text-center z-10">
             <nav className="text-sm text-gray-300 mb-3">
@@ -32,7 +39,9 @@ export function GaleriWrapper() {
               <span className="mx-2">/</span>
               <span className="text-white font-medium">Galeri</span>
             </nav>
-            <h1 className="text-3xl md:text-4xl font-bold text-white">Galeri Foto</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-white">
+              Galeri Foto
+            </h1>
             <p className="text-gray-200 mt-2 text-sm max-w-lg mx-auto">
               Dokumentasi visual keindahan dan keseruan Taman Pintar Yogyakarta
             </p>
@@ -83,7 +92,9 @@ export function GaleriWrapper() {
                     <span className="text-white text-xs font-medium bg-[#2FA4A9]/80 px-2 py-1 rounded">
                       {item.category}
                     </span>
-                    <p className="text-white text-xs mt-1 line-clamp-1">{item.alt}</p>
+                    <p className="text-white text-xs mt-1 line-clamp-1">
+                      {item.alt}
+                    </p>
                   </div>
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <div className="w-10 h-10 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center">
@@ -96,7 +107,8 @@ export function GaleriWrapper() {
           </div>
 
           <p className="text-center text-sm text-gray-400 mt-10">
-            Menampilkan <strong className="text-[#2FA4A9]">{filtered.length}</strong> foto
+            Menampilkan{" "}
+            <strong className="text-[#2FA4A9]">{filtered.length}</strong> foto
           </p>
         </div>
 
@@ -106,7 +118,10 @@ export function GaleriWrapper() {
             className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
             onClick={() => setLightbox(null)}
           >
-            <div className="relative max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
+            <div
+              className="relative max-w-3xl w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
               <button
                 onClick={() => setLightbox(null)}
                 className="absolute -top-10 right-0 text-white hover:text-gray-300 flex items-center gap-1 text-sm"

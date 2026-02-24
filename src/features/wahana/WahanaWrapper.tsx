@@ -15,7 +15,9 @@ export function WahanaWrapper() {
   const [active, setActive] = useState("Semua");
 
   const filtered =
-    active === "Semua" ? wahanaList : wahanaList.filter((w) => w.category === active);
+    active === "Semua"
+      ? wahanaList
+      : wahanaList.filter((w) => w.category === active);
 
   return (
     <>
@@ -23,7 +25,12 @@ export function WahanaWrapper() {
       <main className="pt-16 min-h-screen bg-[#f9fafb]">
         {/* Header */}
         <div className="relative overflow-hidden bg-[#1a2e35] py-14">
-          <Image src="/images/assets/bg-depan.jpg" alt="" fill className="object-cover opacity-15" />
+          <Image
+            src="/images/assets/bg-depan.jpeg"
+            alt=""
+            fill
+            className="object-cover opacity-15"
+          />
           <div className="absolute inset-0 bg-linear-to-r from-[#1a2e35]/95 via-[#1a2e35]/80 to-[#2FA4A9]/60" />
           <div className="relative container mx-auto px-4 md:px-8 text-center z-10">
             <nav className="text-sm text-gray-300 mb-3">
@@ -31,9 +38,12 @@ export function WahanaWrapper() {
               <span className="mx-2">/</span>
               <span className="text-white font-medium">Wahana</span>
             </nav>
-            <h1 className="text-3xl md:text-4xl font-bold text-white">Wahana</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-white">
+              Wahana
+            </h1>
             <p className="text-gray-200 mt-2 text-sm max-w-xl mx-auto">
-              Jelajahi pengalaman sains dan teknologi yang interaktif dan menyenangkan
+              Jelajahi pengalaman sains dan teknologi yang interaktif dan
+              menyenangkan
             </p>
           </div>
         </div>
@@ -75,7 +85,9 @@ export function WahanaWrapper() {
                     height={400}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className={`absolute inset-0 bg-linear-to-t ${wahana.color} opacity-50`} />
+                  <div
+                    className={`absolute inset-0 bg-linear-to-t ${wahana.color} opacity-50`}
+                  />
                   <div className="absolute top-3 left-3">
                     <span className="bg-white/90 text-[#2FA4A9] text-xs font-semibold px-2 py-1 rounded">
                       {wahana.category}
@@ -103,7 +115,8 @@ export function WahanaWrapper() {
           </div>
 
           <p className="text-center text-sm text-gray-400 mt-8">
-            Menampilkan <strong className="text-[#2FA4A9]">{filtered.length}</strong> wahana
+            Menampilkan{" "}
+            <strong className="text-[#2FA4A9]">{filtered.length}</strong> wahana
           </p>
         </div>
       </main>

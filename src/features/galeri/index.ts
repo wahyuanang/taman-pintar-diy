@@ -1,1 +1,1 @@
-export { GaleriWrapper } from './GaleriWrapper';
+export { GaleriWrapper } from "./GaleriWrapper";
